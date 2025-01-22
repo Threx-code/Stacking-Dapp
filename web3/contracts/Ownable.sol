@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.29;
 
 import {Context} from "./Context.sol";
 
@@ -11,7 +11,7 @@ abstract contract Ownable is Context {
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
     constructor(){
-        _transfetOwnership(_msgSender());
+        _transferOwnership(_msgSender());
     }
 
     modifier onlyOwner()
@@ -28,15 +28,15 @@ abstract contract Ownable is Context {
     }
 
     function renouceOwnerShip() public virtual onlyOwner{
-        _transfetOwnership(address(0));
+        _transferOwnership(address(0));
     }
 
     function transferOwnership(address newOwner) public virtual onlyOwner{
         require(newOwner != address(0), "Ownable: new owner is the zero address");
-        _transfetOwnership(newOwner);
+        _transferOwnership(newOwner);
     }
 
-    function _transfetOwnership(address newOwner) internal virtual{
+    function _transferOwnership(address newOwner) internal virtual{
         address oldOwner = _owner;
         _owner = newOwner;
 

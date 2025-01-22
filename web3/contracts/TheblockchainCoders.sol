@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.29;
 
 
 contract TheBlockchainCoders {
@@ -45,7 +45,7 @@ contract TheBlockchainCoders {
         _userId++;
     }
 
-    function trnasfer(address _to, uint256 _value) public returns(bool success){
+    function transfer(address _to, uint256 _value) public returns(bool success){
         require(balanceOf[msg.sender] >= _value, "Insufficient balance");
         inc();
 

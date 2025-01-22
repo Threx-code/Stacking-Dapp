@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.29;
 
 //IMPORTING
 import {Address} from "./Address.sol";
